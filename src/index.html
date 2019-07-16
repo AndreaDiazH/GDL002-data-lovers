@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load('current', {packages: ['corechart']});
+//  google.charts.setOnLoadCallback(drawChart);
+</script>
      <title>🚵IN-BIKE-ME</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -10,17 +15,19 @@
   </head>
   <body>
 <div id="root">
- 
-  
-<header id= "main-header">IN-BIKE-ME...<i class="fas fa-bicycle"></i></header>
+
+
+<header id= "main-header" >IN-BIKE-ME...<i class="fas fa-bicycle"></i></header>
+<header id="main-header2" >IN-BIKE-ME...<i class="fas fa-bicycle"></i></header>
      <p id= "introtxt">Somos una agrupación ciclista buscando fomentar, promover e invitar a toda la ciudadanía a utilizar la bicicleta como medio de transporte y así contribuir a una mejor calidad de vida en nuestras ciudades.<br>¡Por ciudades más seguras, más verdes y más felices!</p>
+   <!--  <p id= "introtxt3"></p> -->
      <p id= "introtxt2"><i class="fas fa-leaf"></i><p>
-     
- <div id="centerbtn">  
+
+ <div id="centerbtn">
    <button type="button" id="btnCompare" name="button">Comparativa</button>
    <button type="button" id="btnAnual" name="button">Datos anuales</button>
  </div>
- 
+
 <section id="AnualData" style="display:none;">
   <h2>Datos por año</h2>
   <div id= "btsAnual">
@@ -28,29 +35,26 @@
     <button type="button" id="btnMoto" name="button"><i class="fas fa-motorcycle"></i></button>
     <button type="button" id="btnCar" name="button"><i class="fas fa-car-side"></i></button>
   </div>
-  
-<!-- -->  
-  
- <div id= "Results">  
+
+ <div id= "Results">
   <table>
-   <tr> 
+   <tr>
     <th scope = "row"></th>
     <th></th>
     <th></th>
-  </tr>  
+  </tr>
   </table>
- </div>      
-      
+ </div>
+
   <div id= "repeatbtn">
      <button type="button" id="Clean" name="button">Limpiar Datos</button>
      <button type="button" id="btnback" name="button">Volver</button>
-  </div>      
+  </div>
 </section>
 
 <section id= "compare" style="display:none;">
- <header>Comparar número de accidentes de transporte por año</header>
   <h2>Elige el año que deseas comparar:</h2>
-  
+
 <div id="yearbts">
  <select id= "yearValue">
   <option value="6">1990</option>
@@ -82,37 +86,23 @@
  </select>
 </div>
 
-<div id= "comparebts">
-  <i id="biciIcon" class="fas fa-bicycle"></i> vs <br><button type="button" id="compareMoto" name="button"><i class="fas fa-motorcycle"></i></button><button type="button" id="compareCar" name="button"><i class="fas fa-car-side"></i></button>
+<div id="chart_wrap">
+  <div id= "pieChartAccident"></div>
 </div>
-
-<div id= "compareTxt">
-   <p>En el año <label id="lblYear"></label> hubo <label id="lblBici"></label> accidentes en bicicleta.</p>
-   <p>Mientras que sucedieron <label id="lblResult"></label> de accidentes en <label id="lblTransport"></label>.</p>
-   <p>Es decir: <label id="lblDiference"></label> accidentes más que en bicicleta.</p>
-</div>
-
-<!--<div>
-<p>Cantidad más alta de accidentes</p>
-<button type="button" id="" name="button">Bicicleta</button><label id="lblBike"></label>
-<button type="button" id="" name="button">Motocicleta</button><label id="lblMoto"></label>
-<button type="button" id="" name="button">Automovil</button><label id="lbl"></label>
-</div> -->
 
 <div id= "resultsCompare"></div>
 
  <div id= "repeatbtn2">
-     <button type="button" id="Clean2" name="button">Limpiar Datos</button>
      <button type="button" id="btnback2" name="button">Volver</button>
-  </div> 
+  </div>
 </section>
-      
+
 <footer>
   <a href= "http://www.instagram.com"><i id= "instagram" class="fab fa-instagram"></i></a>
   <a href= "http://www.facebook.com"><i id = "facebook" class="fab fa-facebook-square"></i></a>
   <a href= "http://www.twitter.com"><i id= "twitter" class="fab fa-twitter-square"></i></a>
 </footer>
-       
+
  <!-- <body> -->
 </div>
     <script src="./data/injuries/injuries.js"></script>
